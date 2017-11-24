@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 
 class AppPageHeader extends Component {
@@ -9,7 +8,6 @@ class AppPageHeader extends Component {
   }
 
   render() {
-    const {isLoadedUser} = this.props
 
     return <div className='navbar navbar-default navbar-fixed-top' role='navigation'>
              <div className='container-fluid'>
@@ -21,7 +19,6 @@ class AppPageHeader extends Component {
                    <span className='icon-bar'></span>
                  </button>
                  <Link className='navbar-brand' to='/'>MongoDB Client
-                   <Logo />
                  </Link>
                </div>
                <div className='collapse navbar-collapse'>
@@ -39,9 +36,4 @@ class AppPageHeader extends Component {
   }
 }
 
-export default connect(
-  ({}) => (
-  {
-  }
-  )
-)(AppPageHeader)
+export default AppPageHeader

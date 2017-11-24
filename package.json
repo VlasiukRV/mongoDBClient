@@ -1,10 +1,10 @@
 {
   "name": "mongoDBClient",
   "version": "1.0.0",
-  "description": "",
+  "description": "SQL runner for mongoDB",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run dev\" \"npm run api\"",
+    "start": "\"npm run dev\"",
     "api": "node apiServer/server.js",
     "dev": "node server.js",
     "build": "webpack"
@@ -12,8 +12,11 @@
   "author": "Top lab",
   "license": "MIT",
   "devDependencies": {
+    "jquery":"",
+    "immutable":"",
+    "material-ui":"",
+    "webpack-bootstrap-installer":"",
     "autoprefixer": "^7.1.5",
-    "awesome-typescript-loader": "^3.2.3",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
@@ -35,8 +38,6 @@
     "react-hot-loader": "^3.0.0",
     "redux-logger": "^3.0.6",
     "style-loader": "^0.19.0",
-    "svg-react-loader": "^0.4.5",
-    "typescript": "^2.5.3",
     "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.19.1"
@@ -44,7 +45,8 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
-    "react": "^16.0.0",
+    "immutable": "^3.8.2",
+    "react": "^16.1.1",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.0.0",

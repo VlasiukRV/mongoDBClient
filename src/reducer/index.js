@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux'
 
-import errors from './errors'
-
-import users from './querySQL'
-import securityScore from './queryResult'
+import sqlQuery from './sqlQuery'
+/*import queryResult from './queryResult'*/
 
 export default combineReducers({
   querySQL: sqlQuery,
-  queryResult: queryResult
+  /*queryResult: queryResult*/
 })
