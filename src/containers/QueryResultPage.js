@@ -21,8 +21,8 @@ class QueryResultPage extends Component {
 export default connect(
   ({querySQL}) => (
   {
-    error: querySQL.get('queryResult').get('error'),
-    message: querySQL.get('queryResult').get('message'),
+    error: querySQL.get('error'),
+    message: querySQL.get('message'),
     tableData: querySQL.get('queryResult').get('result'),
     loaded: querySQL.get('queryResult').get('loaded')
   }
