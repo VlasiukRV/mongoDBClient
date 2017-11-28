@@ -1,0 +1,31 @@
+.contant {
+  margin-top: 60px;
+}
+
+.spiner {
+  height: 100%;
+  text-align: center;  
+}
+
+.information-block {
+  	box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+  	border: 1px solid #000;
+  	border-radius: 5px 5px 5px 5px;
+	padding: 0px;
+  	margin: 10px;
+	float: left;
+}
+
+.query-form {
+	width: 450px;
+	height: 350px;
+}
+
+.result-query-form{
+	width: 650px;
+	height: 350px;
+}
+
+.field-line {
+	width: 300;
+}

@@ -10,7 +10,7 @@ class SqlQueryPage extends Component {
     super(props)
 
     this.state = {
-      sqlQuery: 'SELECT   amount , customer  ,  description FROM payment  WHERE;',
+      sqlQuery: 'SELECT   amount , commission  ,  description FROM payment  WHERE (amount > 100) AND (commission < 5) GROUP BY;',
       error: false,
       messages: []
     }
@@ -39,8 +39,9 @@ class SqlQueryPage extends Component {
   render() {
 
     return (<div>
-              <SqlQueryForm sqlQuery={ this.state.sqlQuery } onSubmit={ this.processForm } onChange={ this.changeSqlQuery } messages={ this.state.messages } error={ this.state.error }
-              />
+              <div className='information-block query-form'>
+                <SqlQueryForm sqlQuery={ this.state.sqlQuery } onSubmit={ this.processForm } onChange={ this.changeSqlQuery } messages={ this.state.messages } error={ this.state.error }/>
+              </div>
             </div>
     );
   }

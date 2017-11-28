@@ -6,7 +6,7 @@ import AppPageHome from './AppPageHome'
 export default class AppRoute extends Component {
 
   render() {
-    return <div className='contant'>
+    return <div>
              <Switch>
                <Route exact path='/' component={ AppPageHome } />
              </Switch>

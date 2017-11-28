@@ -6,12 +6,12 @@ import TableDataForm from '../components/TableDataForm'
 class QueryResultPage extends Component {
 
   render() {
-    const {queryResult, loaded} = this.props
+    const { error, message, tableData, loaded } = this.props
     
-    if(!loaded) return <h3>Haw no data</h3>
-
     return (<div>
-              <TableDataForm tableData={ queryResult } />
+            <div className='information-block result-query-form'>              
+              <TableDataForm tableData={ tableData } loaded={ loaded } error={ error } message={ message }/>
+            </div>
             </div>
     );
   }
@@ -21,7 +21,9 @@ class QueryResultPage extends Component {
 export default connect(
   ({querySQL}) => (
   {
-    queryResult: querySQL.get('queryResult').get('result'),
+    error: querySQL.get('queryResult').get('error'),
+    message: querySQL.get('queryResult').get('message'),
+    tableData: querySQL.get('queryResult').get('result'),
     loaded: querySQL.get('queryResult').get('loaded')
   }
   )

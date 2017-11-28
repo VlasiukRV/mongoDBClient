@@ -6,6 +6,8 @@ import store from '../store'
 import AppPageHeader from './AppPageHeader'
 import AppRoute from './AppRoute'
 
+import '../stylesheets/App.css';
+
 export default class App extends Component {
 
   render() {

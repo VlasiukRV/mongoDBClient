@@ -6,6 +6,8 @@ import { changeEntityValue } from '../utils/arrays'
 
 const defauQueryResult = new Map({
   result: {},
+  error: false,
+  message: '',
   loading: false,
   loaded: false,
 })
@@ -27,8 +29,14 @@ export default (state = defaultState, action) => {
   case RUN_SQLQUERY + SUCCESS: {
     console.info(response)
     let queryResult = defauQueryResult
-          .set('loaded', true)
+          .set('loaded', response.data.length != 0)
           .set('result', response.data);
+    if(response.status != 200){
+      queryResult = queryResult
+          .set('loaded', true)
+          .set('error', true)
+          .set('message', response.message)
+    }
     return state
           .set('queryResult', queryResult)
           .set('error', false)

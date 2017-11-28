@@ -6,9 +6,9 @@ import QueryResultPage from '../containers/QueryResultPage'
 export default class AppPageHome extends Component {
   render() {
     return <div>
-             <div>
+             <div className='contant'>
                <SqlQueryPage />
-               <QueryResultPage />
+               <QueryResultPage />               
              </div>
            </div>
   }
