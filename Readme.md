@@ -1,12 +1,12 @@
 DESCRIPTION
 
-This application is grafical interface for translate SQL query into query for mongodb.
-Api you can find if https://github.com/VlasiukRV/mongoDBClientService
+This application is created to translate SQL query into the query for Mongodb.
+You can find API under https://github.com/VlasiukRV/mongoDBClientService
 
-For build application use webpack.
-ATTENTION!!! Before build application in file webpack.configs.js insatll your proxy connection to server which provided API. By default this connection is 'http://localhost:8080'
+In order to build the application, plase use the webpack.
+IMPORTANT!!! Before building the application in file webpack.configs.js define your proxy connection to the server with API. By default this connection is 'http://localhost:8080'
 
 HELP
 
-Application has two window in one you tipe sql query in second you wil receive response.
+Application has two windows: in one you type sql query in second you wil receive the response.
 
