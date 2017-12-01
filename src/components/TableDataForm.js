@@ -50,7 +50,7 @@ class TableDataForm extends Component {
         ))
 
         return (<div>
-                  <Table height={ 200 } selectable={ false }>
+                  <Table height = { '200px' } selectable={ false }>
                     <TableHeader>
                       <TableRow>
                         { tableHeader }

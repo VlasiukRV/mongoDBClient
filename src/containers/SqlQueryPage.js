@@ -10,7 +10,7 @@ class SqlQueryPage extends Component {
     super(props)
 
     this.state = {
-      sqlQuery: 'SELECT   amount , commission  ,  description FROM payment  WHERE (amount > 100) AND (commission < 5) GROUP BY;',
+      sqlQuery: 'SELECT   amount , commission  ,  description FROM payment  WHERE (amount > 100) AND (commission < 5);',
       error: false,
       messages: []
     }

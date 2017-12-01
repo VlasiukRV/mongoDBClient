@@ -26,19 +26,21 @@ export default (state = defaultState, action) => {
   case RUN_SQLQUERY + START:
 		return state.set('queryResult', changeEntityValue(defauQueryResult, {'loading': true}))
   case RUN_SQLQUERY + SUCCESS: {
+    state = state
+          .set('error', false)
+          .set('message', '') 
     let queryResult = defauQueryResult
-          .set('loaded', response.data.length != 0)
-          .set('result', response.data);
+          .set('loaded', !response.data.empty)
+          .set('result', response.data.result);
     if(response.status != 200){
       queryResult = queryResult
-          .set('error', true)
+          .set('loading', true)
       state = state
           .set('error', true)
           .set('message', response.message)
     }
     return state
           .set('queryResult', queryResult)
-          .set('error', false)
     }
   case RUN_SQLQUERY + FAIL:
     return state
