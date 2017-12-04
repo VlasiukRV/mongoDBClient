@@ -6,12 +6,11 @@ import TableDataForm from '../components/TableDataForm'
 class QueryResultPage extends Component {
 
   render() {
-    const { error, message, tableData, loaded } = this.props
-    
+    const {error, message, tableData, loaded} = this.props
     return (<div>
-            <div className='information-block result-query-form'>              
-              <TableDataForm tableData={ tableData } loaded={ loaded } error={ error } message={ message }/>
-            </div>
+              <div className='information-block result-query-form'>
+                <TableDataForm tableData={ tableData } loaded={ loaded } error={ error } message={ message } />
+              </div>
             </div>
     );
   }

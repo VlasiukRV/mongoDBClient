@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 
 class AppPageHeader extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
 
     return <div className='navbar navbar-default navbar-fixed-top' role='navigation'>
@@ -30,10 +26,6 @@ class AppPageHeader extends Component {
            </div>
   }
 
-  LogOut(event) {
-    event.preventDefault()
-    this.props.logOutUser()
-  }
 }
 
 export default AppPageHeader

@@ -4,8 +4,10 @@ export function runSqlQuery(query) {
   return {
     type: RUN_SQLQUERY,
     callAPI: {
-  url: '/api/sqlQuery/run',
-  data: {query: query}
-}
+      url: '/api/sqlQuery/run',
+      data: {
+        query: query
+      }
+    }
   }
 }

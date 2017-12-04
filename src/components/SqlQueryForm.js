@@ -5,14 +5,6 @@ import TextField from 'material-ui/TextField';
 
 class SqlQueryForm extends Component {
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-    }
-
-  }
-
   render() {
     const {sqlQuery, onSubmit, onChange, messages, error} = this.props
 
@@ -20,11 +12,11 @@ class SqlQueryForm extends Component {
               <Card>
                 <form onSubmit={ onSubmit }>
                   <h2 className='card-heading'>SQL query</h2>
-                  <div>                
+                  <div>
                   </div>
-                  <div >
-                    <TextField floatingLabelText='sql query' name='sqlQuery' onChange={ onChange } value={ sqlQuery } multiLine={ true } rows={8} rowsMax={8} fullWidth={true}
-                    />
+                  <div>
+                    <TextField floatingLabelText='sql query' name='sqlQuery' onChange={ onChange } value={ sqlQuery } multiLine={ true } rows={ 8 }
+                      rowsMax={ 8 } fullWidth={ true } />
                   </div>
                   <div>
                     <FlatButton type='submit' label='run query' primary />

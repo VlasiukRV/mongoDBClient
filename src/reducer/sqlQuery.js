@@ -18,36 +18,40 @@ const defaultState = new Map({
 })
 
 export default (state = defaultState, action) => {
-  const {type, response, error} = action
+  const { type, response, error } = action
 
   switch (type) {
   case CHANGE_SQLQUERY:
     return state.set('error', false)
   case RUN_SQLQUERY + START:
-		return state.set('queryResult', changeEntityValue(defauQueryResult, {'loading': true}))
+    return state.set('queryResult', changeEntityValue(defauQueryResult, {
+      'loading': true
+    }))
   case RUN_SQLQUERY + SUCCESS: {
     state = state
-          .set('error', false)
-          .set('message', '') 
+      .set('error', false)
+      .set('message', '')
     let queryResult = defauQueryResult
-          .set('loaded', !response.data.empty)
-          .set('result', response.data.result);
-    if(response.status != 200){
-      queryResult = queryResult
-          .set('loading', true)
+      .set('loaded', !response.data.empty)
+      .set('result', response.data.result);
+    
+    if (response.status != 200) {
       state = state
-          .set('error', true)
-          .set('message', response.message)
+        .set('error', true)
+        .set('message', response.message)
+      queryResult = queryResult
+        .set('loading', true)
     }
+
     return state
-          .set('queryResult', queryResult)
-    }
+      .set('queryResult', queryResult)
+  }
   case RUN_SQLQUERY + FAIL:
     return state
-          .set('queryResult', defauQueryResult)          
-          .set('error', true)        
-          .set('message', getErrorMessage(error))
-    
+      .set('queryResult', defauQueryResult)
+      .set('error', true)
+      .set('message', getErrorMessage(error))
+
   }
 
   return state

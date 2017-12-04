@@ -15,59 +15,59 @@ class TableDataForm extends Component {
             </div>)
   }
 
-    getValueRepresentation(object) {
-      if (typeof (object) == 'object') {
-        return Object.keys(object).map((keyName) => (
-          object[keyName] + ' '
-        ))
-      }
-      return object;
-    }
-
-    makeColumns(row) {
-      return Object.keys(row).map((keyName, index) => (
-        <TableRowColumn key={ index }>
-          { this.getValueRepresentation(row[keyName]) }
-        </TableRowColumn>
+  getValueRepresentation(object) {
+    if (typeof (object) == 'object') {
+      return Object.keys(object).map((keyName) => (
+        object[keyName] + ' '
       ))
     }
+    return object;
+  }
 
-    getBody() {
-      const { error, message, loaded, tableData } = this.props
+  makeColumns(row) {
+    return Object.keys(row).map((keyName, index) => (
+      <TableRowColumn key={ index }>
+        { this.getValueRepresentation(row[keyName]) }
+      </TableRowColumn>
+    ))
+  }
 
-      if (loaded && !error) {
+  getBody() {
+    const { error, message, loaded, tableData } = this.props
 
-        const tableHeader = Object.keys(tableData[0]).map((keyName, index) => (
-          <TableHeaderColumn key={ index }>
-            { keyName }
-          </TableHeaderColumn>
-        ))
+    if (loaded && !error) {
 
-        const tableTemplate = tableData.map((row, index) => (
-          <TableRow key={ index }>
-            { this.makeColumns(row) }
-          </TableRow>
-        ))
+      const tableHeader = Object.keys(tableData[0]).map((keyName, index) => (
+        <TableHeaderColumn key={ index }>
+          { keyName }
+        </TableHeaderColumn>
+      ))
 
-        return (<div>
-                  <Table height = { '200px' } selectable={ false }>
-                    <TableHeader>
-                      <TableRow>
-                        { tableHeader }
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody showRowHover={ true } stripedRows={ true } displayRowCheckbox = { false }>
-                      { tableTemplate }
-                    </TableBody>
-                  </Table>
-                </div>)
-      } else {
-        if(error)
+      const tableTemplate = tableData.map((row, index) => (
+        <TableRow key={ index }>
+          { this.makeColumns(row) }
+        </TableRow>
+      ))
+
+      return (<div>
+                <Table height={ '200px' } selectable={ false }>
+                  <TableHeader>
+                    <TableRow>
+                      { tableHeader }
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody showRowHover={ true } stripedRows={ true } displayRowCheckbox={ false }>
+                    { tableTemplate }
+                  </TableBody>
+                </Table>
+              </div>)
+    } else {
+      if (error)
         return (<div>
                   { message }
                 </div>)
-      }
     }
+  }
 
 }
 

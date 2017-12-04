@@ -14,33 +14,28 @@ class SqlQueryPage extends Component {
       error: false,
       messages: []
     }
-
     this.processForm = this.processForm.bind(this)
     this.changeSqlQuery = this.changeSqlQuery.bind(this)
   }
 
   changeSqlQuery(event) {
     event.preventDefault()
-
     const sqlQuery = event.target.value
-
     this.setState({
       sqlQuery
     });
-
   }
 
   processForm(event) {
     event.preventDefault()
-
     this.props.runSqlQuery(this.state.sqlQuery)
   }
 
   render() {
-
     return (<div>
               <div className='information-block query-form'>
-                <SqlQueryForm sqlQuery={ this.state.sqlQuery } onSubmit={ this.processForm } onChange={ this.changeSqlQuery } messages={ this.state.messages } error={ this.state.error }/>
+                <SqlQueryForm sqlQuery={ this.state.sqlQuery } onSubmit={ this.processForm } onChange={ this.changeSqlQuery } messages={ this.state.messages } error={ this.state.error }
+                />
               </div>
             </div>
     );

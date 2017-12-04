@@ -8,7 +8,7 @@ export default class AppPageHome extends Component {
     return <div>
              <div className='contant'>
                <SqlQueryPage />
-               <QueryResultPage />               
+               <QueryResultPage />
              </div>
            </div>
   }

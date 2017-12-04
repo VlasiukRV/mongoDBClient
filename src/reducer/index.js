@@ -5,5 +5,5 @@ import sqlQuery from './sqlQuery'
 
 export default combineReducers({
   querySQL: sqlQuery,
-  /*queryResult: queryResult*/
+/*queryResult: queryResult*/
 })
